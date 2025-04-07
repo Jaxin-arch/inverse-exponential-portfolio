@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Cernan Jabay</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-white text-gray-800" id="pageBody">
+  <div class="max-w-4xl mx-auto p-6 space-y-8">
+    
+    <!-- Header -->
+    <header class="text-center">
+      <h1 class="text-4xl font-bold text-blue-800">Finding the Inverse of an Exponential Function</h1>
+      <p class="text-lg mt-2 text-gray-600">Portfolio-style summary presentation</p>
+      <button onclick="toggleDarkMode()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        Toggle Dark Mode
+      </button>
+    </header>
+
+    <!-- Learning Outcomes -->
+    <section class="bg-white shadow-md rounded-2xl p-6" id="learning">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Learning Outcomes</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Understand exponential and inverse functions</li>
+        <li>Learn how to find the inverse using base 10 logarithms</li>
+      </ul>
+    </section>
+
+    <!-- Exponential Function -->
+    <section class="bg-white shadow-md rounded-2xl p-6">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Exponential Function</h2>
+      <p>An exponential function is written as <strong>f(x) = a × b<sup>x</sup></strong>. It models:</p>
+      <ul class="list-disc list-inside space-y-1 mt-2">
+        <li><strong>Growth</strong> if b > 1</li>
+        <li><strong>Decay</strong> if 0 &lt; b &lt; 1</li>
+      </ul>
+    </section>
+
+    <!-- Inverse of a Function -->
+    <section class="bg-white shadow-md rounded-2xl p-6">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Inverse of a Function</h2>
+      <p>The inverse of a function swaps inputs and outputs. If a function maps x → y, the inverse maps y → x.</p>
+    </section>
+
+    <!-- Sample Problem -->
+    <section class="bg-white shadow-md rounded-2xl p-6">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Sample Problem</h2>
+      <p><strong>Given:</strong> f(x) = 18<sup>x</sup> + 5</p>
+      <button onclick="toggleSteps()" class="mt-4 mb-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+        Toggle Steps
+      </button>
+      <div id="steps" class="hidden">
+        <ol class="list-decimal list-inside space-y-2 mt-2">
+          <li>Isolate the exponential term: f(x) - 5 = 18<sup>x</sup></li>
+          <li>Change variables: x - 5 = 18<sup>y</sup></li>
+          <li>Apply log base 10: log(x - 5) = y × log(18)</li>
+          <li>Solve for y: y = log(x - 5) / log(18)</li>
+        </ol>
+        <p class="mt-4"><strong>Final Answer:</strong> f⁻¹(x) = log(x - 5) / log(18)</p>
+      </div>
+    </section>
+
+    <!-- Video Explanation -->
+    <section class="bg-white shadow-md rounded-2xl p-6 text-center">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Video Explanation</h2>
+      <a href="https://youtu.be/0KteyVQdThk?si=IFjyQ_y2BQ70fzuca" target="_blank" class="text-blue-500 hover:underline">
+        Watch the explanation on YouTube
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm pt-6 border-t">
+      © 2025 Your Name — Educational Portfolio
+    </footer>
+  </div>
+
+  <!-- JavaScript Section -->
+  <script>
+    function toggleSteps() {
+      const steps = document.getElementById('steps');
+      steps.classList.toggle('hidden');
+    }
+
+    function toggleDarkMode() {
+      const body = document.getElementById('pageBody');
+      const isDark = body.classList.contains('bg-gray-900');
+
+      if (isDark) {
+        body.classList.remove('bg-gray-900', 'text-white');
+        body.classList.add('bg-gradient-to-br', 'from-blue-50', 'to-white', 'text-gray-800');
+      } else {
+        body.classList.remove('bg-gradient-to-br', 'from-blue-50', 'to-white', 'text-gray-800');
+        body.classList.add('bg-gray-900', 'text-white');
+      }
+    }
+  </script>
+</body>
+</html>
