@@ -19,9 +19,9 @@
     <header class="text-center">
       <h1 class="text-4xl font-bold text-blue-800">Finding the Inverse of an Exponential Function</h1>
       <p class="text-lg mt-2 text-gray-600">Gwapo si JABAY</p>
-      <button onclick="toggleDarkMode(); showMessage()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-       kung pisliton ni nimo kay mawala tanan
-      </button>
+      <button onclick="toggleDarkMode(); showToast()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+  kung pisliton ni nimo kay mawala tanan
+</button>
     </header>
 
     <!-- Learning Outcomes -->
@@ -80,12 +80,26 @@
       © 2025 John Cernan Jabay — Educational
     </footer>
   </div>
+  <div id="toastNotification" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 bg-gray-900 text-white px-4 py-3 rounded-lg shadow-lg transition-all duration-300 ease-in-out z-50">
+  DIBA???
+</div>
 
   <!-- JavaScript Section -->
   <script>
-    function showMessage() {
-    alert("DIBA???");
-  }
+   function showToast() {
+  const toast = document.getElementById("toastNotification");
+  
+  // Bring it into view (Slide up and fade in)
+  toast.classList.remove("translate-y-20", "opacity-0");
+  toast.classList.add("translate-y-0", "opacity-100");
+  
+  // Wait 3 seconds, then hide it again automatically
+  setTimeout(() => {
+    toast.classList.remove("translate-y-0", "opacity-100");
+    toast.classList.add("translate-y-20", "opacity-0");
+  }, 3000);
+}
+
     
     function toggleSteps() {
       const steps = document.getElementById('steps');
